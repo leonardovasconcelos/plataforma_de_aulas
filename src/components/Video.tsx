@@ -1,5 +1,7 @@
-export function Video(){
+export function Video(): JSX.Element{
     return(
-        <h1>Video</h1>
+        <div className="flex-1">
+            Video
+        </div>
     )
 }
