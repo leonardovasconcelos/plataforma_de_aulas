@@ -25,7 +25,7 @@ export function Lesson(props: LessonProps): JSX.Element{
     return(
         <Link to={`/event/lesson/${props.slug}`} className="group">
             <span className="text-gray-300"> 
-                {props.avaliableAt.toString()}
+                {availableDateFormatted}
             </span>
 
              
