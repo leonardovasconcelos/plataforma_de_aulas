@@ -1,6 +1,13 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
+const VITE_API_URL = import.meta.env.VITE_API_URL || "https://api-sa-east-1.hygraph.com/v2/cl926wizc2l5401ul4w7w6ot2/master"
+const VITE_API_ACCESS_TOKEN = import.meta.env.VITE_API_ACCESS_TOKEN || "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImdjbXMtbWFpbi1wcm9kdWN0aW9uIn0.eyJ2ZXJzaW9uIjozLCJpYXQiOjE2Njg1NjcyMTAsImF1ZCI6WyJodHRwczovL2FwaS1zYS1lYXN0LTEuaHlncmFwaC5jb20vdjIvY2w5MjZ3aXpjMmw1NDAxdWw0dzd3Nm90Mi9tYXN0ZXIiLCJtYW5hZ2VtZW50LW5leHQuZ3JhcGhjbXMuY29tIl0sImlzcyI6Imh0dHBzOi8vbWFuYWdlbWVudC5ncmFwaGNtcy5jb20vIiwic3ViIjoiMTJjYzc0NjctYzUyMi00YzE5LWI2NzItYWRhZGQ3YjkzNDE1IiwianRpIjoiY2xhajF1M2VpMmMwZTAxdDI2djR2Nnc1biJ9.AZeCoDh3aE2Tg_yQG2OJL9xyLKh9r_vhoux_M4rO94ko7i8oHA5UW4UX6tBfIeAHumTGtxP01bmlJLfIV5z6SIQ19uGgzPhLk84XVbBWRdDYggRJmun6WOopul0BHgK5m_uUO7VEdUOMPNv5CEqo1okP2KalcwA4xJFbS9gH9cM08gTNWxprFx4YQG6EyWpNt2aKAmXL2yux2FF9o2YygoPV70bQGB91tYYEUpwtcBWekO7VuSMxjAYOg3PJeGs4C1ah0EEnKGoc35qNiTrpXlKp-Z8AsLcKF0UeaslVOGoFZS4aaHgFBgLqdtmBoPWGKDRHdPbAxCFgdrgGdOelyYPI71zJTen1ZgPO9GGeAbBVUwu-Yc589mQWhZIRjI5R2CTgVKtZNuiQnTJrxx1fNIwB6Fl43g23LyfMX6jadYHaaHhGY41tobJJ-HOUdE6xnckQn5Jjh9q741JcKfkQWMzQ8vLs_cDjRbj5w-cN8NJ3KoODl8qUgwX5j8LUOu29R9aCkPe4O5xPM3bS5W_BJr2GXwCnQ5NRHLNViprUMkqurACfkOVlX9H2J2QjMy_vQbDZf5WzfxfsoCRwXPYJppaz6e0B79NT7NqP2AV8bJKRkx-zy9rstsWZRn2kgk6iMmawcaV5rRBHimqbuBf5qi62kXnqJKd6fpgp-_Y3lBs"
+
 export const client = new ApolloClient({
-    uri: 'https://api-sa-east-1.hygraph.com/v2/cl926wizc2l5401ul4w7w6ot2/master',
+        
+    uri: import.meta.env.VITE_API_URL,
+    headers: {
+        'Authorization': `Bearer ${import.meta.env.VITE_API_ACCESS_TOKEN}`
+    },
     cache: new InMemoryCache()
 })
